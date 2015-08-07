@@ -1350,7 +1350,7 @@ class Connection(object):
         self.ParameterStatusReceived += self.handle_PARAMETER_STATUS
 
         def text_out(v):
-            return v.encode(self._client_encoding)
+            return str(v).encode(self._client_encoding)
 
         def time_out(v):
             return v.isoformat().encode(self._client_encoding)
